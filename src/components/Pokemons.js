@@ -24,20 +24,24 @@ const Pokemons = () => {
         axios.get(url)
             .then(response => {
                 setPokemons(response.data.results) // data sekarang
-                setPrev(response.data.prev) // link halaman sebelumnya
+                setPrev(response.data.previous) // link halaman sebelumnya
                 setNext(response.data.next) // link halaman berikutnya
             })
     }, [url]) // ketika value `url` berubah maka fetch ulang data
 
     return (
         <div>
-            <div className="container">
+            <div className="row">
                 {pokemons.map((pokemon, index) =>
                     <Pokemon pokemon={pokemon} key={index} handleOnClick={handleOnClick} /> //props lemparan ke pokemon.js
                 )}
             </ div>
-            <button onClick={() => onPageChange(prev)}>Prev</button>
-            <button onClick={() => onPageChange(next)}>Next</button>
+            <div className="row">
+                <div className="col text-center">
+                    <button onClick={() => onPageChange(prev)} className="btn btn-primary">Prev</button>
+                    <button onClick={() => onPageChange(next)} className="btn btn-primary">Next</button>
+                </div>
+            </div>
         </div>
     )
 }
