@@ -85,3 +85,8 @@ nav ul li {
 .navbar-nav > li > a:hover {
   border-top: 3px solid var(--primary-white);
 }
+
+.container {
+  display: flex;
+  padding-top: 15px;
+}
