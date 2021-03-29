@@ -30,18 +30,22 @@ const Pokemon = ({pokemon, handleOnClick}) => {
     }, [pokemon.url])
 
     if(loading){
-        return <div>loading...</div>
+        return   <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                 </div>
     }else{
         return (
             <div className="col-sm-5 col-md-6 text-center">
 
                 <div className="card">
-                <img className="card-img-top img-fluid" src={pokemonData.sprites.front_default} alt={pokemonData.name} />
+                <a href={`/pokemon/${pokemonData.id}`}>
+                <img className="card-img-top img-fluid" style={{width: "30%",}} src={pokemonData.sprites.front_default} alt={pokemonData.name} />
+                </a>
                 <div className="card-body">
-                    <h5 className="card-title">ID : {pokemonData.id}</h5>
-                    <p className="card-text"><a href={`/pokemon/${pokemonData.id}`}>{pokemonData.name}</a></p>
+                    <h5 className="card-title">ID : #{pokemonData.id}</h5>
+                    <p className="card-text text-capitalize"><a href={`/pokemon/${pokemonData.id}`}>{pokemonData.name}</a></p>
                     <p className="card-text">Owned : {owned}</p>
-                    <a onClick={() => handleCatch()} className="btn btn-primary">Catch</a>
+                    <a onClick={() => handleCatch()} className="btn btn-primary">Catch Pokemon</a>
                 </div>
                 </div>
 

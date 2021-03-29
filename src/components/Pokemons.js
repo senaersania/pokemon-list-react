@@ -4,9 +4,9 @@ import Pokemon from './Pokemon'
 import PokemonDetail from './PokemonDetail'
 
 const Pokemons = () => {
-    const [pokemons, setPokemons] = useState([]) //this.state
+    const [pokemons, setPokemons] = useState([])
     const [currentPage, setCurrentPage] = useState(0);
-    const [limit, setLimit] = useState(10)
+    const [limit, setLimit] = useState(200)
     const [offset, setOffset] = useState(0)
     const [url, setUrl] = useState(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`)
     const [prev, setPrev] = useState(null)
@@ -23,17 +23,17 @@ const Pokemons = () => {
     useEffect(() => {
         axios.get(url)
             .then(response => {
-                setPokemons(response.data.results) // data sekarang
-                setPrev(response.data.previous) // link halaman sebelumnya
-                setNext(response.data.next) // link halaman berikutnya
+                setPokemons(response.data.results)
+                setPrev(response.data.previous)
+                setNext(response.data.next)
             })
-    }, [url]) // ketika value `url` berubah maka fetch ulang data
+    }, [url])
 
     return (
         <div>
             <div className="row">
                 {pokemons.map((pokemon, index) =>
-                    <Pokemon pokemon={pokemon} key={index} handleOnClick={handleOnClick} /> //props lemparan ke pokemon.js
+                    <Pokemon pokemon={pokemon} key={index} handleOnClick={handleOnClick} />
                 )}
             </ div>
             <div className="row">
