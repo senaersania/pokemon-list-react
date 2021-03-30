@@ -5,9 +5,9 @@ import PokemonDetail from './PokemonDetail'
 
 const Pokemons = () => {
     const [pokemons, setPokemons] = useState([])
-    const [currentPage, setCurrentPage] = useState(0);
-    const [limit, setLimit] = useState(200)
-    const [offset, setOffset] = useState(0)
+    // const [currentPage, setCurrentPage] = useState(0);
+    const [limit] = useState(200)
+    const [offset] = useState(0)
     const [url, setUrl] = useState(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`)
     const [prev, setPrev] = useState(null)
     const [next, setNext] = useState(url)
@@ -30,16 +30,16 @@ const Pokemons = () => {
     }, [url])
 
     return (
-        <div>
+        <div className="col-md-12">
             <div className="row">
                 {pokemons.map((pokemon, index) =>
                     <Pokemon pokemon={pokemon} key={index} handleOnClick={handleOnClick} />
                 )}
             </ div>
             <div className="row">
-                <div className="col text-center">
-                    <button onClick={() => onPageChange(prev)} className="btn btn-primary">Prev</button>
-                    <button onClick={() => onPageChange(next)} className="btn btn-primary">Next</button>
+                <div className="col-lg-12 mb-3 text-center fixed-bottom">
+                    <button onClick={() => onPageChange(prev)} className="btn btn-success mr-2">Prev</button>
+                    <button onClick={() => onPageChange(next)} className="btn btn-success">Next</button>
                 </div>
             </div>
         </div>

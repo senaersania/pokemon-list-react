@@ -34,7 +34,7 @@ const PokemonDetail = () => {
     useEffect(() => {
         axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`) 
         .then(response => {
-			console.log(response.data)
+			//console.log(response.data)
             setPokemonDetail(response.data)
             setLoading(false)
 			setPokemonHeight(Math.round(response.data.height * 10))
@@ -58,10 +58,10 @@ const PokemonDetail = () => {
 					</div>
 					<div className="col-7">
 						<div className="float-right">
-							{pokemonDetail.types.map((type) =>(
+							{pokemonDetail.types.map((type, index) =>(
 							<span 
 							className="badge badge-pill badge-primary" 
-							key={type}
+							key={index}
 							style={{
 								backgroundColor: `#${TYPE_COLORS[type.type.name]}`,
 								color: "#fff",
@@ -244,7 +244,7 @@ const PokemonDetail = () => {
 							</div>
 						</div>
 					</div>
-					
+					<hr />
 					<div className="card-body">
 						<div className="card-tite">
 							<h4 className="text-center mb-4">Profile</h4>
@@ -282,8 +282,8 @@ const PokemonDetail = () => {
 												Abilities:
 											</h6>
 										</div>
-										<div className="col-6">{pokemonDetail.abilities.map((ability) => (
-											<h6 className="float-left text-capitalize">
+										<div className="col-6">{pokemonDetail.abilities.map((ability, index) => (
+											<h6 className="float-left text-capitalize" key={index}>
 												{ability.ability.name}
 											</h6>
 										))}
