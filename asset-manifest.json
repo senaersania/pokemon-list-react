@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/pokemon-list-react/static/css/main.7bab7fa9.chunk.css",
-    "main.js": "/pokemon-list-react/static/js/main.9bbaf865.chunk.js",
-    "main.js.map": "/pokemon-list-react/static/js/main.9bbaf865.chunk.js.map",
+    "main.js": "/pokemon-list-react/static/js/main.b4090ced.chunk.js",
+    "main.js.map": "/pokemon-list-react/static/js/main.b4090ced.chunk.js.map",
     "runtime-main.js": "/pokemon-list-react/static/js/runtime-main.df24be3f.js",
     "runtime-main.js.map": "/pokemon-list-react/static/js/runtime-main.df24be3f.js.map",
     "static/css/2.4c97ca4f.chunk.css": "/pokemon-list-react/static/css/2.4c97ca4f.chunk.css",
@@ -21,6 +21,6 @@
     "static/css/2.4c97ca4f.chunk.css",
     "static/js/2.c331e60e.chunk.js",
     "static/css/main.7bab7fa9.chunk.css",
-    "static/js/main.9bbaf865.chunk.js"
+    "static/js/main.b4090ced.chunk.js"
   ]
 }
