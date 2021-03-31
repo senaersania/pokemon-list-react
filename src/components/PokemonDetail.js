@@ -46,7 +46,11 @@ const PokemonDetail = () => {
     }, [id])
 
     if(loading){
-        return <div>loading ...</div>
+        return 	<div className="d-flex justify-content-center">
+					<div className="spinner-border" role="status">
+						<span className="sr-only">Loading...</span>
+	 				</div>
+				</div>
     }else{
         return (
 	<div className="col">
@@ -283,7 +287,10 @@ const PokemonDetail = () => {
 											</h6>
 										</div>
 										<div className="col-6">{pokemonDetail.abilities.map((ability, index) => (
-											<h6 className="float-left text-capitalize" key={index}>
+											<h6 
+											className="float-left text-capitalize badge badge-pill badge-success mr-1 p-2" 
+											key={index}
+											>
 												{ability.ability.name}
 											</h6>
 										))}

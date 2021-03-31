@@ -3,6 +3,7 @@ import logo from "../pokemon-logo.png"
 
 const navbar = () => {
     return (
+        <div className="sticky-top">
         <nav className="navbar navbar-expand-lg navbar-light bg-success">   
             <div className="container">
 
@@ -24,6 +25,7 @@ const navbar = () => {
                 </div>
             </div>           
         </nav>
+        </div>
     )
 }
 
